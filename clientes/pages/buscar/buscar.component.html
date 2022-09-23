@@ -1,0 +1,42 @@
+<div fxLayout="column">
+    <div>
+      <h1>Buscador de citas</h1>
+      <mat-divider></mat-divider>
+    </div>
+  
+    <div fxLayout="column">
+      <h3>Buscador</h3>
+  
+      <mat-form-field>
+        <input
+          type="text"
+          placeholder="ingrese el nombre del cliente"
+          aria-label="Number"
+          matInput
+          [(ngModel)]="termino"
+          [matAutocomplete]="auto"
+          (input)="buscando()"
+        />
+  
+        <mat-autocomplete
+          autoActiveFirstOption
+          #auto="matAutocomplete"
+          (optionSelected)="opcionSeleccionada($event)"
+        >
+          <mat-option *ngFor="let agenda of agendas" [value]="agenda">
+            {{ agenda.nombreCliente }}
+          </mat-option>
+  
+          <mat-option
+            value=""
+            *ngIf="agendas.length === 0 && termino.trim().length > 0">
+            Sin resultados 
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  
+    <div *ngFor="let agenda of agendas">
+      <app-agendado [agenda]="agenda"></app-agendado>
+    </div>
+  </div>

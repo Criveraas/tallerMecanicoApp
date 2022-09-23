@@ -1,0 +1,58 @@
+
+<h1>
+    {{(agenda.id)?'Editar' : 'Nueva' }} cita <small> {{ agenda.nombreCliente }} </small>
+</h1>
+  
+ 
+        <mat-form-field fxFlex="100" fxLayout.xs="column">
+          <mat-label>Nombre Cliente</mat-label>
+          <input matInput type="text" required [(ngModel)]="agenda.nombreCliente"/>
+        </mat-form-field>
+        <br>
+      <mat-form-field>
+        <mat-label>modelo de Auto</mat-label>
+        <input matInput type="text" required [(ngModel)]="agenda.nombreAuto"/>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Direccion</mat-label>
+        <input matInput type="text" required [(ngModel)]="agenda.direccion" />
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Fecha consulta</mat-label>
+        <input matInput type="date"  required [(ngModel)]="agenda.fecha">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Hora Consulta</mat-label>
+        <input matInput type="time" required [(ngModel)]="agenda.hora" >
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Motivo Consulta</mat-label>
+        <textarea matInput 
+                  [(ngModel)]="agenda.motivoConsulta" 
+                  required>ingrese motivo</textarea>
+        </mat-form-field>
+  
+
+  
+      <br />
+      <div fxLayout>
+        <button mat-raised-button color="primary" (click)="guardar()">
+          <mat-icon>save</mat-icon>
+          {{ (agenda.id)? 'Actualizar' : 'Crear' }}
+        </button>
+        <span class="spacer"></span>
+  
+        <button
+          *ngIf="agenda.id" 
+          mat-raised-button 
+          color="warn" 
+          (click)="borrarCita()">
+          <mat-icon>delete</mat-icon>
+          Borrar
+        </button>
+      </div>
+  

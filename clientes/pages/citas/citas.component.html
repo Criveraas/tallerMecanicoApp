@@ -1,0 +1,34 @@
+<mat-grid-list cols="1" *ngIf="!agenda; else divCita">
+    <mat-grid-tile>
+        <mat-spinner></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<ng-template #divCita>
+   <div fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutGap="30px">
+        
+        <div fxFlex="50">
+            <h1>Nombre: {{agenda.nombreCliente | titlecase}}  </h1>
+            <mat-divider></mat-divider>
+            <br>
+        </div>
+
+        <div fxFlex="50">
+            <h1>Dueño: {{agenda.nombreAuto | titlecase}} </h1>
+            <mat-divider></mat-divider>
+
+            <mat-list>
+                <mat-list-item>Fecha consulta: {{agenda.fecha }}</mat-list-item>
+                <mat-list-item>Hora consulta: {{agenda.hora}} </mat-list-item>
+                <mat-list-item>Dirección particular: {{agenda.direccion | titlecase}} </mat-list-item>
+                <mat-list-item>Motivo de consulta: {{agenda.motivoConsulta}} </mat-list-item>
+            </mat-list>
+            <br>
+            <button mat-button color="warn"
+            (click)="regresar()">
+                Regresar
+            </button>
+        </div>

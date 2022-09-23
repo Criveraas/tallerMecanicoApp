@@ -1,0 +1,29 @@
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Nombre Cliente : {{ agenda.nombreCliente | titlecase }}</mat-card-title>
+      
+    </mat-card-header>
+
+    
+
+    <mat-card-content>
+      <h3>Vehiculo : {{ agenda.nombreAuto | titlecase }}</h3>
+      <p>
+        <strong>Fecha consulta :</strong> {{ agenda.fecha }}
+        <br />
+        <strong>Hora Consulta :</strong> {{ agenda.hora }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn"
+              [routerLink]="['/clientes/id', agenda.id]">
+        Ver más...
+      </button>
+      
+      <button mat-button color="info"
+              [routerLink]="['/clientes/editar', agenda.id]">
+        Editar
+      </button>
+    </mat-card-actions>
+  </mat-card>
