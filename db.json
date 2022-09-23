@@ -1,0 +1,29 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "John Doe",
+      "email": "john.due@gmail.com"
+    }
+  ],
+  "clientes": [
+    {
+      "id": "_Md3fpU",
+      "nombreCliente": "Cristobal Rivera",
+      "nombreAuto": "volvo c30",
+      "fecha": "2022-09-25",
+      "hora": "16:15",
+      "motivoConsulta": "caja de cambios ",
+      "direccion": "septima avenida 1443"
+    },
+    {
+      "id": "SwVk_Bm",
+      "nombreCliente": "romina",
+      "nombreAuto": "mercedes",
+      "fecha": "2022-10-03",
+      "hora": "16:30",
+      "motivoConsulta": "frenos malos ",
+      "direccion": "caliche 2296"
+    }
+  ]
+}
